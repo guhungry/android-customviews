@@ -23,19 +23,22 @@ object OnAfterTextChangedListenerTest : Spek({
             callCount = 0
 
             it("should pass correct values when called 1st time") {
-                val expected = "BEDA".toEditable()
+                val string = "BEDA"
+                val expected = string.toEditable()
+
                 sut.afterTextChanged(expected)
 
                 MatcherAssert.assertThat(callCount, CoreMatchers.equalTo(1))
-                MatcherAssert.assertThat(cValue, CoreMatchers.equalTo<CharSequence>(expected))
+                MatcherAssert.assertThat(cValue.toString(), CoreMatchers.equalTo(string))
             }
 
             it("should pass correct values when called 2nd time") {
-                val expected = "aeda".toEditable()
+                val string = "BEDA"
+                val expected = string.toEditable()
                 sut.afterTextChanged(expected)
 
                 MatcherAssert.assertThat(callCount, CoreMatchers.equalTo(2))
-                MatcherAssert.assertThat(cValue, CoreMatchers.equalTo<CharSequence>(expected))
+                MatcherAssert.assertThat(cValue.toString(), CoreMatchers.equalTo(string))
             }
         }
     }

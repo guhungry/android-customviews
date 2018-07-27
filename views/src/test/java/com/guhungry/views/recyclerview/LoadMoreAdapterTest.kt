@@ -11,13 +11,13 @@ import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
-import org.mockito.Mockito
+import org.mockito.Mockito.mock
 
 object LoadMoreAdapterTest : Spek({
     given("a default LoadMoreAdapter") {
-        val adapter by memoized { MockAdapter() }
         val listener by memoized { MockListener() }
-        val holder by memoized { adapter.onCreateViewHolder(Mockito.mock(LinearLayout::class.java), 0) }
+        val adapter by memoized { MockAdapter() }
+        val holder by memoized { adapter.onCreateViewHolder(mock(LinearLayout::class.java), 0) }
 
         on("default value") {
             it("isLoading should be false") {
@@ -52,12 +52,14 @@ object LoadMoreAdapterTest : Spek({
 
             it("should not call listener when bind at last position and isLoading = true") {
                 adapter.isLoading = true
+                adapter.isLoadMoreEnabled = true
                 adapter.onBindViewHolder(holder, POSITION_LAST)
 
                 assertThat(listener.callCount, equalTo(2))
             }
 
             it("should not call listener when bind at last position and isLoadMoreEnabled = false") {
+                adapter.isLoading = false
                 adapter.isLoadMoreEnabled = false
                 adapter.onBindViewHolder(holder, POSITION_LAST)
 
@@ -81,9 +83,7 @@ object LoadMoreAdapterTest : Spek({
         val value = 2
         override fun doBindViewHolder(holder: ViewHolder, position: Int) = Unit
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return Mockito.mock(ViewHolder::class.java)
-        }
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = mock(ViewHolder::class.java)
 
         override fun getItemCount(): Int = value
     }
