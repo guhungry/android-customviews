@@ -17,7 +17,7 @@ object LoadMoreAdapterTest : Spek({
     given("a default LoadMoreAdapter") {
         val adapter by memoized { MockAdapter() }
         val listener by memoized { MockListener() }
-        val holder by memoized { adapter.onCreateViewHolder(Mockito.mock<LinearLayout>(LinearLayout::class.java), 0) }
+        val holder by memoized { adapter.onCreateViewHolder(Mockito.mock(LinearLayout::class.java), 0) }
 
         on("default value") {
             it("isLoading should be false") {
@@ -82,7 +82,7 @@ object LoadMoreAdapterTest : Spek({
         override fun doBindViewHolder(holder: ViewHolder, position: Int) = Unit
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return Mockito.mock<ViewHolder>(ViewHolder::class.java)
+            return Mockito.mock(ViewHolder::class.java)
         }
 
         override fun getItemCount(): Int = value
