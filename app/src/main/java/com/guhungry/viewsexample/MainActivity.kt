@@ -7,11 +7,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.guhungry.viewsexample.ExampleRecyclerAdapter.ExampleViewHolder
 import com.guhungry.views.recyclerview.BindableViewHolder
 import com.guhungry.views.recyclerview.LoadMoreAdapter
 import com.guhungry.views.recyclerview.OnLoadMoreListener
+import com.guhungry.viewsexample.ExampleRecyclerAdapter.ExampleViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_item_example.view.*
 
