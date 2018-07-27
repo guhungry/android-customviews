@@ -39,9 +39,11 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     // Tests
     testImplementation 'junit:junit:4.12'
     testImplementation "org.junit.platform:junit-platform-engine:$junitPlatformVersion"
+    // Tests - Spek
     testImplementation("org.jetbrains.spek:spek-api:$spekVersion") {
         exclude group: "org.jetbrains.kotlin"
     }
@@ -50,6 +52,9 @@ dependencies {
         exclude group: "org.jetbrains.kotlin"
     }
     testImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    // Mockito
+    testCompile "org.mockito:mockito-core:+"
+    androidTestCompile "org.mockito:mockito-android:+"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
