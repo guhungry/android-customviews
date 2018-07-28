@@ -7,7 +7,7 @@ import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 
-object SimpleTextWatcherTest: Spek({
+object SimpleTextWatcherTest : Spek({
     val sut = object : SimpleTextWatcher {}
     given("a simple text watcher") {
         on("beforeTextChanged") {
