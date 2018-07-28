@@ -33,11 +33,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadMoreData() {
-        adapter.isLoading = true
+        setLoading(true)
         list_example.postDelayed({
             adapter.addData()
-            adapter.isLoading = false
+            setLoading(false)
         }, 3000)
+    }
+
+    private fun setLoading(loading: Boolean) {
+        adapter.isLoading = loading
+        progressBar.visibility = if (loading) View.VISIBLE else View.GONE
     }
 }
 
