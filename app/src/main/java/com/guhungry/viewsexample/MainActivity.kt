@@ -64,9 +64,7 @@ class ExampleRecyclerAdapter(context: Context) : LoadMoreAdapter<ExampleViewHold
         holder.onRecycled()
     }
 
-    override fun getItemCount(): Int {
-        return items
-    }
+    override fun getItemCount(): Int = items
 
     fun addData() {
         items += 10
@@ -78,7 +76,6 @@ class ExampleRecyclerAdapter(context: Context) : LoadMoreAdapter<ExampleViewHold
             view.text1.text = data.toString()
         }
 
-        override fun onRecycled() {
-        }
+        override fun onRecycled() = Unit
     }
 }
