@@ -19,6 +19,9 @@
         <activity android:name=".LoadMoreAdapterActivity"
             android:label="@string/activity_load_more_adapter"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".HorizontalLinearSpacingActivity"
+            android:label="@string/activity_horizontal_linear_spacing_decorator"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".VerticalLinearSpacingActivity"
             android:label="@string/activity_vertical_linear_spacing_decorator"
             android:parentActivityName=".MainActivity" />

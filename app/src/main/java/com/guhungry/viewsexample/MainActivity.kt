@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val examples = listOf(
             ExampleActivityModel(R.string.activity_load_more_adapter, LoadMoreAdapterActivity::class.java),
             ExampleActivityModel(R.string.activity_grid_spacing_decorator, GridSpacingActivity::class.java),
+            ExampleActivityModel(R.string.activity_horizontal_linear_spacing_decorator, HorizontalLinearSpacingActivity::class.java),
             ExampleActivityModel(R.string.activity_vertical_linear_spacing_decorator, VerticalLinearSpacingActivity::class.java)
     )
 

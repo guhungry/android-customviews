@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="activity_load_more_adapter">Load More Adapter</string>
+    <string name="activity_horizontal_linear_spacing_decorator">Horizontal Linear Spacing Decorator</string>
     <string name="activity_vertical_linear_spacing_decorator">Vertical Linear Spacing Decorator</string>
     <string name="activity_grid_spacing_decorator">Grid Spacing Decorator</string>
 </resources>
