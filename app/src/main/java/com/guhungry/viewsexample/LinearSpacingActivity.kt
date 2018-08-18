@@ -9,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.guhungry.views.recyclerview.BindableViewHolder
 import com.guhungry.views.recyclerview.LoadMoreAdapter
+import com.guhungry.views.recyclerview.decoration.LinearSpacingItemDecoration
 import com.guhungry.viewsexample.LinearSpacingActivity.ExampleRecyclerAdapter.ExampleViewHolder
 import kotlinx.android.synthetic.main.activity_linear_spacing.*
 import kotlinx.android.synthetic.main.list_item_example.view.*
 
 class LinearSpacingActivity : AppCompatActivity() {
     private lateinit var adapter: ExampleRecyclerAdapter
+    private lateinit var decorator: LinearSpacingItemDecoration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,12 +26,24 @@ class LinearSpacingActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        setupMode()
         setupList()
     }
 
+    private fun setupMode() {
+        switch_edge.setOnCheckedChangeListener { _, checked ->
+            decorator.includeEdge = checked
+            adapter.notifyDataSetChanged()
+        }
+    }
+
     private fun setupList() {
-        adapter = ExampleRecyclerAdapter(this)
         list_example.layoutManager = LinearLayoutManager(this)
+
+        decorator = LinearSpacingItemDecoration(LinearLayoutManager.VERTICAL, 40, switch_edge.isChecked)
+        list_example.addItemDecoration(decorator)
+
+        adapter = ExampleRecyclerAdapter(this)
         list_example.adapter = adapter
     }
 
