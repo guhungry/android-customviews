@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="activity_load_more_adapter">Load More Adapter</string>
+    <string name="activity_linear_spacing_decorator">Linear Spacing Decorator</string>
 </resources>
