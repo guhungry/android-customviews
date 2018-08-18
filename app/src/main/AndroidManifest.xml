@@ -19,8 +19,11 @@
         <activity android:name=".LoadMoreAdapterActivity"
             android:label="@string/activity_load_more_adapter"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LinearSpacingActivity"
-            android:label="@string/activity_linear_spacing_decorator"
+        <activity android:name=".VerticalLinearSpacingActivity"
+            android:label="@string/activity_vertical_linear_spacing_decorator"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".GridSpacingActivity"
+            android:label="@string/activity_grid_spacing_decorator"
             android:parentActivityName=".MainActivity" />
     </application>
 

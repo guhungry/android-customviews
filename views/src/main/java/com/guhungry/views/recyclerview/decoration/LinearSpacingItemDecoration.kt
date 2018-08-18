@@ -3,9 +3,10 @@ package com.guhungry.views.recyclerview.decoration
 import android.graphics.Rect
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.RecyclerView.Orientation
 import android.view.View
 
-class LinearSpacingItemDecoration(private val orientation: Int, private val spacing: Int, var includeEdge: Boolean) : RecyclerView.ItemDecoration() {
+class LinearSpacingItemDecoration(@Orientation private val orientation: Int, private val spacing: Int, var includeEdge: Boolean) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         val position = parent.getChildAdapterPosition(view)
         val count = parent.adapter.itemCount
