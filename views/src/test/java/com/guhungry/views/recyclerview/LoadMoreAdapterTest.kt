@@ -74,6 +74,20 @@ object LoadMoreAdapterTest : Spek({
                 assertThat(listener.callCount, equalTo(3))
             }
         }
+
+        on("with no listener") {
+            it("should not call listener when bind at before last position") {
+                adapter.onBindViewHolder(holder, POSITION_OTHER)
+
+                assertThat(listener.callCount, equalTo(0))
+            }
+
+            it("should not call listener when bind at last position") {
+                adapter.onBindViewHolder(holder, POSITION_LAST)
+
+                assertThat(listener.callCount, equalTo(0))
+            }
+        }
     }
 }) {
     private const val POSITION_OTHER = 0
