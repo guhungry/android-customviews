@@ -14,27 +14,21 @@ class LinearSpacingItemDecoration(@Orientation private val orientation: Int, pri
         val nextOffset = (position + 1) * spacing / count
 
         if (includeEdge) {
-            when (orientation) {
-                LinearLayoutManager.VERTICAL -> {
-                    outRect.top = spacing - currentOffset
-                    outRect.bottom = nextOffset
-                }
-                else -> {
-                    outRect.left = spacing - currentOffset
-                    outRect.right = nextOffset
-                }
-            }
+            // Start spacing, end spacing
+            applyItemOffsets(outRect, spacing - currentOffset, nextOffset)
         } else {
-            when (orientation) {
-                LinearLayoutManager.VERTICAL -> {
-                    outRect.top = currentOffset
-                    outRect.bottom = spacing - nextOffset
-                }
-                else -> {
-                    outRect.left = currentOffset
-                    outRect.right = spacing - nextOffset
-                }
-            }
+            // Start 0, end 0
+            applyItemOffsets(outRect, currentOffset, spacing - nextOffset)
+        }
+    }
+
+    private fun applyItemOffsets(outRect: Rect, start: Int, end: Int) {
+        if (orientation == LinearLayoutManager.VERTICAL) {
+            outRect.top = start
+            outRect.bottom = end
+        } else {
+            outRect.left = start
+            outRect.right = end
         }
     }
 }
