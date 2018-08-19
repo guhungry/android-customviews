@@ -20,6 +20,9 @@ before_install:
 # script for build and release via Travis to Bintray
 script: gradle/buildViaTravis.sh
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 notifications:
   email: false
 
