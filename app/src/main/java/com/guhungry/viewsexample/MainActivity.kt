@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.guhungry.views.recyclerview.BindableViewHolder
-import com.guhungry.views.recyclerview.OnItemClickListener
+import com.guhungry.views.recyclerview.listener.OnItemClickListener
 import com.guhungry.viewsexample.MainActivity.ExampleAdapter.ItemViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_item_example.view.*

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.guhungry.views.recyclerview.OnLoadMoreListener
+import com.guhungry.views.recyclerview.listener.OnLoadMoreListener
 import com.guhungry.viewsexample.adapters.ExampleRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_load_more_adapter.*
 
