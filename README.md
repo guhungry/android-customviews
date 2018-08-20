@@ -25,7 +25,10 @@ implementation('com.guhungry.views:views:0.0.4') {
 ### Recycler View
 #### Grid Spacing Item Decorator
 #### Linear Spacing Item Decorator
-#### On Item Click Listener (Interface)
+
+### Listener (Interface)
+#### On Load More Listener
+#### On Item Click Listener
 
 ### Recycler Adapter
 #### Base Load More Adapter (Abstract Class)
