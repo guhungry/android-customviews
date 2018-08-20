@@ -24,7 +24,10 @@ implementation('com.guhungry.views:views:0.0.4') {
 
 ### Recycler View
 #### Grid Spacing Item Decorator
+<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/GridSpacingItemDecorator.gif" width="300" title="Grid Spacing Item Decorator">
+
 #### Linear Spacing Item Decorator
+<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/HorizontalLinearSpacingItemDecorator.gif" width="300" title="Horizontal Linear Spacing Item Decorator"> <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/VerticalLinearSpacingItemDecorator.gif" width="300" title="Vertical Linear Spacing Item Decorator">
 
 ### Listener (Interface)
 #### On Load More Listener
@@ -32,6 +35,7 @@ implementation('com.guhungry.views:views:0.0.4') {
 
 ### Recycler Adapter
 #### Base Load More Adapter (Abstract Class)
+<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Load More Adapter">
 
 ### View Holder
 #### Bindable View Holder
