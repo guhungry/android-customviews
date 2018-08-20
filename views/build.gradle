@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'de.mannodermaus.android-junit5'
 apply plugin: 'jacoco-android'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 27
@@ -65,3 +67,30 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'com.guhungry.views:views'
+
+    publishedGroupId = 'com.guhungry.views'
+    libraryName = 'AndroidCustomViews'
+    artifact = 'views'
+
+    libraryDescription = 'This view is a container that supports diagonal scroll and fling gesture. It is based on AOSP HorizontalScrollView.'
+
+    siteUrl = 'https://github.com/guhungry/android-customviews'
+    gitUrl = 'https://github.com/guhungry/android-customviews.git'
+
+    libraryVersion = '0.0.2'
+
+    developerId = 'guhungry1'
+    developerName = 'Woraphot Chokratanasombat'
+    developerEmail = 'Woraphot Chokratanasombat'
+
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+apply from: "$rootDir/gradle/jcenter.gradle"

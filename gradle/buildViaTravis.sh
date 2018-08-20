@@ -6,10 +6,10 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   ./gradlew :views:build :views:jacocoTestReport
 elif [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_TAG" == "" ]; then
   echo -e 'Build Branch with Snapshot => Branch ['$TRAVIS_BRANCH']'
-  ./gradlew :views:build :views:jacocoTestReport --stacktrace --info
+  ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" :views:build :views:jacocoTestReport :views:bintrayUpload --stacktrace --info
 elif [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_TAG" != "" ]; then
   echo -e 'Build Branch for Release => Branch ['$TRAVIS_BRANCH']  Tag ['$TRAVIS_TAG']'
-  ./gradlew :views:build :views:jacocoTestReport --stacktrace --info
+  ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" :views:build :views:jacocoTestReport :views:bintrayUpload --stacktrace --info
 else
   echo -e 'WARN: Should not be here => Branch ['$TRAVIS_BRANCH']  Tag ['$TRAVIS_TAG']  Pull Request ['$TRAVIS_PULL_REQUEST']'
   ./gradlew :views:build :views:jacocoTestReport
