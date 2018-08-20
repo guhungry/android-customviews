@@ -95,8 +95,6 @@ ext {
 
 apply from: "$rootDir/gradle/jcenter.gradle"
 
-println "BEE"
-println project
 if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
     bintray.user = project.property('bintrayUser')
     bintray.key = project.property('bintrayKey')
