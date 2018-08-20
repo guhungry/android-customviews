@@ -11,6 +11,13 @@ Add **Android Custom Views** into project as a Gradle compile dependency:
 ```
 implementation 'com.guhungry.views:views:0.0.4'
 ```
+or to remove transitive dependencies use:
+```
+implementation('com.guhungry.views:views:0.0.4') {
+    exclude group: 'com.android.support'
+    exclude group: 'org.jetbrains.kotlin'
+}
+```
 [ ![Download](https://api.bintray.com/packages/guhungry1/maven/com.guhungry.views%3Aviews/images/download.svg) ](https://bintray.com/guhungry1/maven/com.guhungry.views%3Aviews/_latestVersion)
 
 ## Components
