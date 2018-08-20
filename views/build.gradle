@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "0.0.5"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -82,7 +82,7 @@ ext {
     siteUrl = 'https://github.com/guhungry/android-customviews'
     gitUrl = 'https://github.com/guhungry/android-customviews.git'
 
-    libraryVersion = '0.0.4'
+    libraryVersion = android.defaultConfig.versionName
 
     developerId = 'guhungry1'
     developerName = 'Woraphot Chokratanasombat'

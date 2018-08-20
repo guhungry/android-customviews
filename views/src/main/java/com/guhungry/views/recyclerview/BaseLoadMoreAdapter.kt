@@ -1,8 +1,9 @@
 package com.guhungry.views.recyclerview
 
 import android.support.v7.widget.RecyclerView
+import com.guhungry.views.recyclerview.listener.OnLoadMoreListener
 
-abstract class LoadMoreAdapter<T> : RecyclerView.Adapter<T>() where T : RecyclerView.ViewHolder {
+abstract class BaseLoadMoreAdapter<T> : RecyclerView.Adapter<T>() where T : RecyclerView.ViewHolder {
     var isLoadMoreEnabled = true
     var isLoading = false
     private var listener: OnLoadMoreListener? = null

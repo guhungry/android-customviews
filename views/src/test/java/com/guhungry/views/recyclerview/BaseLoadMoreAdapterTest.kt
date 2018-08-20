@@ -3,8 +3,9 @@ package com.guhungry.views.recyclerview
 import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.guhungry.views.recyclerview.LoadMoreAdapterTest.POSITION_LAST
-import com.guhungry.views.recyclerview.LoadMoreAdapterTest.POSITION_OTHER
+import com.guhungry.views.recyclerview.BaseLoadMoreAdapterTest.POSITION_LAST
+import com.guhungry.views.recyclerview.BaseLoadMoreAdapterTest.POSITION_OTHER
+import com.guhungry.views.recyclerview.listener.OnLoadMoreListener
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.jetbrains.spek.api.Spek
@@ -13,10 +14,10 @@ import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 import org.mockito.Mockito.mock
 
-object LoadMoreAdapterTest : Spek({
-    given("a default LoadMoreAdapter") {
+object BaseLoadMoreAdapterTest : Spek({
+    given("a default BaseLoadMoreAdapter") {
         val listener by memoized { MockListener() }
-        val adapter by memoized { MockAdapter() }
+        val adapter by memoized { MockAdapterBase() }
         val holder by memoized { adapter.onCreateViewHolder(mock(LinearLayout::class.java), 0) }
 
         on("default value") {
@@ -93,7 +94,7 @@ object LoadMoreAdapterTest : Spek({
     private const val POSITION_OTHER = 0
     private const val POSITION_LAST = 1
 
-    private class MockAdapter : LoadMoreAdapter<ViewHolder>() {
+    private class MockAdapterBase : BaseLoadMoreAdapter<ViewHolder>() {
         val value = 2
         override fun doBindViewHolder(holder: ViewHolder, position: Int) = Unit
 
