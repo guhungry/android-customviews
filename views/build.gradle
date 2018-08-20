@@ -82,7 +82,7 @@ ext {
     siteUrl = 'https://github.com/guhungry/android-customviews'
     gitUrl = 'https://github.com/guhungry/android-customviews.git'
 
-    libraryVersion = '0.0.2'
+    libraryVersion = '0.0.4'
 
     developerId = 'guhungry1'
     developerName = 'Woraphot Chokratanasombat'
@@ -94,3 +94,19 @@ ext {
 }
 
 apply from: "$rootDir/gradle/jcenter.gradle"
+
+println "BEE"
+println project
+if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
+    bintray.user = project.property('bintrayUser')
+    bintray.key = project.property('bintrayKey')
+
+    println project.property('bintrayUser')
+    println project.property('bintrayKey')
+} else if (project.rootProject.file('local.properties').exists()) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    bintray.user = properties.getProperty("bintrayUser")
+    bintray.key = properties.getProperty("bintrayKey")
+}

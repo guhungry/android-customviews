@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script will build the project.
 
+echo -e 'bintrayUser ['$bintrayUser']'
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   echo -e "Build Pull Request #$TRAVIS_PULL_REQUEST => Branch [$TRAVIS_BRANCH]"
   ./gradlew :views:build :views:jacocoTestReport
