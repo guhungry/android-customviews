@@ -41,5 +41,5 @@ implementation('com.guhungry.views:views:0.0.6') {
 ### View Holder
 #### Bindable View Holder (Abstract Class)
 
-## Extensions
-### RecyclerView.addOnPageChangeListener()
+### Extensions
+#### RecyclerView.addOnPageChangeListener()
