@@ -9,11 +9,11 @@ Android library with Custom Views and Helpers to make my life simpler written in
 
 Add **Android Custom Views** into project as a Gradle compile dependency: 
 ```
-implementation 'com.guhungry.views:views:0.0.4'
+implementation 'com.guhungry.views:views:0.0.6'
 ```
 or to remove transitive dependencies use:
 ```
-implementation('com.guhungry.views:views:0.0.4') {
+implementation('com.guhungry.views:views:0.0.6') {
     exclude group: 'com.android.support'
     exclude group: 'org.jetbrains.kotlin'
 }
@@ -30,12 +30,16 @@ implementation('com.guhungry.views:views:0.0.4') {
 <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/HorizontalLinearSpacingItemDecorator.gif" width="300" title="Horizontal Linear Spacing Item Decorator"> <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/VerticalLinearSpacingItemDecorator.gif" width="300" title="Vertical Linear Spacing Item Decorator">
 
 ### Listener (Interface)
-#### On Load More Listener
+#### On Load More Listener (for Base Load More Adapter)
 #### On Item Click Listener
+#### On Page Change Listener (for RecyclerView.addOnPageChangeListener())
 
 ### Recycler Adapter
 #### Base Load More Adapter (Abstract Class)
 <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Load More Adapter">
 
 ### View Holder
-#### Bindable View Holder
+#### Bindable View Holder (Abstract Class)
+
+## Extensions
+### RecyclerView.addOnPageChangeListener()
