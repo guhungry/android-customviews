@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
             ExampleActivityModel(R.string.activity_load_more_adapter, LoadMoreAdapterActivity::class.java),
             ExampleActivityModel(R.string.activity_grid_spacing_decorator, GridSpacingActivity::class.java),
             ExampleActivityModel(R.string.activity_horizontal_linear_spacing_decorator, HorizontalLinearSpacingActivity::class.java),
-            ExampleActivityModel(R.string.activity_vertical_linear_spacing_decorator, VerticalLinearSpacingActivity::class.java)
+            ExampleActivityModel(R.string.activity_vertical_linear_spacing_decorator, VerticalLinearSpacingActivity::class.java),
+            ExampleActivityModel(R.string.activity_page_change_recycler_view, PageChangeRecyclerViewActivity::class.java)
     )
 
     class ExampleActivityModel(val name: Int, val activity: Class<*>)

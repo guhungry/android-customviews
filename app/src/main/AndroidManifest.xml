@@ -28,6 +28,9 @@
         <activity android:name=".GridSpacingActivity"
             android:label="@string/activity_grid_spacing_decorator"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".PageChangeRecyclerViewActivity"
+            android:label="@string/activity_page_change_recycler_view"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

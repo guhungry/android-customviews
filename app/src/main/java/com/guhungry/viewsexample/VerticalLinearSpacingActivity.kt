@@ -33,8 +33,9 @@ class VerticalLinearSpacingActivity : AppCompatActivity() {
     private fun setupList() {
         val spacing = resources.getDimensionPixelSize(R.dimen.grid_spacing)
         decorator = LinearSpacingItemDecoration(ORIENTATION, spacing, switch_edge.isChecked)
-        list_example.layoutManager = LinearLayoutManager(this, ORIENTATION, false)
         list_example.addItemDecoration(decorator)
+
+        list_example.layoutManager = LinearLayoutManager(this, ORIENTATION, false)
 
         adapter = ExampleRecyclerAdapter(this, 50)
         list_example.adapter = adapter
