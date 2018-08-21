@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.guhungry.views.recyclerview.BindableViewHolder
+import com.guhungry.views.recyclerview.decoration.GridSpacingItemDecoration
 import com.guhungry.views.recyclerview.listener.OnItemClickListener
 import com.guhungry.viewsexample.MainActivity.ExampleAdapter.ItemViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
     class ExampleActivityModel(val name: Int, val activity: Class<*>)
 
     private fun setupList() {
-        list.layoutManager = GridLayoutManager(this, 2)
+        val spacing = resources.getDimensionPixelSize(R.dimen.grid_spacing)
+        list.addItemDecoration(GridSpacingItemDecoration(NUMBER_OF_COLUMNS, spacing, true))
+        list.layoutManager = GridLayoutManager(this, NUMBER_OF_COLUMNS)
         list.adapter = ExampleAdapter(examples).apply {
             setOnItemClickListener(OnItemClickListener { startActivity(Intent(this@MainActivity, it)) })
         }
@@ -67,5 +70,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onRecycled() = Unit
         }
+    }
+
+    companion object {
+        private const val NUMBER_OF_COLUMNS = 2
     }
 }

@@ -33,7 +33,8 @@ class GridSpacingActivity : AppCompatActivity() {
     private fun setupList() {
         list_example.layoutManager = GridLayoutManager(this, NUMBER_OF_COLUMNS)
 
-        decorator = GridSpacingItemDecoration(NUMBER_OF_COLUMNS, 40, switch_edge.isChecked)
+        val spacing = resources.getDimensionPixelSize(R.dimen.grid_spacing)
+        decorator = GridSpacingItemDecoration(NUMBER_OF_COLUMNS, spacing, switch_edge.isChecked)
         list_example.addItemDecoration(decorator)
 
         adapter = ExampleRecyclerAdapter(this, 50)
