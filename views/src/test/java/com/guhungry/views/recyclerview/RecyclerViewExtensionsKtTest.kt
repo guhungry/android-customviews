@@ -14,29 +14,34 @@ import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
 
 object RecyclerViewExtensionsKtTest : Spek({
-    given("RecyclerView.addOnPageChangeListener()") {
-        val listener by memoized { MockPageChangeListener() }
+    val listener by memoized { MockPageChangeListener() }
+    val recycler by memoized { mock(RecyclerView::class.java) }
+    var sut: OnScrollListener? = null
+
+    beforeEachTest {
+        sut = recycler.addOnPageChangeListener(listener)
+    }
+    afterEachTest { sut = null }
+
+    given("RecyclerView.addOnPageChangeListener() with layoutManager") {
         val layoutManager by memoized { mock(LinearLayoutManager::class.java) }
-        val recycler by memoized { mock(RecyclerView::class.java) }
-        var sut: OnScrollListener? = null
 
-        beforeEachTest {
-            `when`(recycler.getLayoutManager()).thenReturn(layoutManager)
+        beforeGroup {
             `when`(layoutManager.findFirstVisibleItemPosition()).thenReturn(5)
-
-            sut = recycler.addOnPageChangeListener(listener)
+            `when`(recycler.getLayoutManager()).thenReturn(layoutManager)
         }
+
         on("onScrollStateChanged()") {
             it("should not call listener when newState = SCROLL_STATE_DRAGGING") {
                 sut?.onScrollStateChanged(recycler, RecyclerView.SCROLL_STATE_DRAGGING)
 
-                assertThat(listener.position, equalTo(0))
+                assertThat(listener.position, equalTo(-1))
             }
 
             it("should not call listener when newState = SCROLL_STATE_SETTLING") {
                 sut?.onScrollStateChanged(recycler, RecyclerView.SCROLL_STATE_SETTLING)
 
-                assertThat(listener.position, equalTo(0))
+                assertThat(listener.position, equalTo(-1))
             }
 
             it("should call listener when newState = SCROLL_STATE_IDLE") {
@@ -46,9 +51,35 @@ object RecyclerViewExtensionsKtTest : Spek({
             }
         }
     }
+
+    given("RecyclerView.addOnPageChangeListener() without layoutManager") {
+        beforeGroup {
+            `when`(recycler.getLayoutManager()).thenReturn(null)
+        }
+
+        on("onScrollStateChanged()") {
+            it("should not call listener when newState = SCROLL_STATE_DRAGGING") {
+                sut?.onScrollStateChanged(recycler, RecyclerView.SCROLL_STATE_DRAGGING)
+
+                assertThat(listener.position, equalTo(-1))
+            }
+
+            it("should not call listener when newState = SCROLL_STATE_SETTLING") {
+                sut?.onScrollStateChanged(recycler, RecyclerView.SCROLL_STATE_SETTLING)
+
+                assertThat(listener.position, equalTo(-1))
+            }
+
+            it("should call listener when newState = SCROLL_STATE_IDLE") {
+                sut?.onScrollStateChanged(recycler, RecyclerView.SCROLL_STATE_IDLE)
+
+                assertThat(listener.position, equalTo(0))
+            }
+        }
+    }
 }) {
     class MockPageChangeListener : OnPageChangeListener {
-        var position = 0
+        var position = -1
 
         override fun onPageSelected(position: Int) {
             this.position = position
