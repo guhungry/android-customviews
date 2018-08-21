@@ -43,3 +43,4 @@ implementation('com.guhungry.views:views:0.0.6') {
 
 ### Extensions
 #### RecyclerView.addOnPageChangeListener()
+<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/PageChangeRecyclerView.gif" width="300" title="RecyclerView.addOnPageChangeListener()">
