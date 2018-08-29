@@ -39,7 +39,7 @@ implementation('com.guhungry.views:views:0.0.6') {
 <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Load More Adapter">
 
 #### Base Sectioned Data Adapter (Abstract Class)
-<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Sectioned Data Adapter">
+<img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseSectionedDataAdapter.gif" width="300" title="Base Sectioned Data Adapter">
 
 ### View Holder
 #### Bindable View Holder (Abstract Class)
