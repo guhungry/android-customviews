@@ -37,6 +37,7 @@ implementation('com.guhungry.views:views:0.0.6') {
 ### Recycler Adapter
 #### Base Load More Adapter (Abstract Class)
 <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Load More Adapter">
+
 #### Base Sectioned Data Adapter (Abstract Class)
 <img src="https://github.com/guhungry/android-customviews/raw/master/documentation/images/recyclerview/BaseLoadMoreAdapter.gif" width="300" title="Base Sectioned Data Adapter">
 
