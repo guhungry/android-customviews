@@ -6,14 +6,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
 import com.guhungry.views.recyclerview.addOnPageChangeListener
-import com.guhungry.views.recyclerview.decoration.LinearSpacingItemDecoration
 import com.guhungry.views.recyclerview.listener.OnPageChangeListener
 import com.guhungry.viewsexample.adapters.ExampleRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_page_change_recycler_view.*
 
 class PageChangeRecyclerViewActivity : AppCompatActivity() {
     private lateinit var adapter: ExampleRecyclerAdapter
-    private lateinit var decorator: LinearSpacingItemDecoration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
