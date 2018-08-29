@@ -5,4 +5,5 @@
     <string name="activity_vertical_linear_spacing_decorator">Vertical Linear Spacing Decorator</string>
     <string name="activity_grid_spacing_decorator">Grid Spacing Decorator</string>
     <string name="activity_page_change_recycler_view">Recycler View Page Change Listener</string>
+    <string name="activity_section_data_adapter">Section Data Adapter</string>
 </resources>
