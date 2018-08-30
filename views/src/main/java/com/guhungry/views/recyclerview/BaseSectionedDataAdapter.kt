@@ -4,11 +4,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 
 abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHolder<*>>() {
-    private var sectionedData = mutableListOf<ListItem>()
-
     ////////////////////////
     // Generate Section Data
     ////////////////////////
+    private var sectionedData = mutableListOf<ListItem>()
     protected fun generateSectionData(data: Iterable<T>) {
         data.map(this::toSectionHeader)
                 .distinct()
