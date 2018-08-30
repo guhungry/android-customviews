@@ -41,12 +41,12 @@ abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHol
     ///////////////////
     override fun onBindViewHolder(holder: BindableViewHolder<*>, position: Int) {
         val item = sectionedData[position]
-        return when (item.type) {
+        when (item.type) {
             TYPE_SECTION_HEADER -> doBindViewHolder(holder, item.data as String)
             else -> doBindViewHolder(holder, item.data as T)
         }
     }
-    private fun <X> doBindViewHolder(holder: BindableViewHolder<*>, data: X) = (holder as BindableViewHolder<X>).bindData(data)
+    private fun <X> doBindViewHolder(holder: BindableViewHolder<*>, data: X) = (holder as? BindableViewHolder<X>)?.bindData(data)
 
     /////////////////
     // Item Functions
