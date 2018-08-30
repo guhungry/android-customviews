@@ -26,6 +26,6 @@ fun RecyclerView.addOnPageChangeListener(listener: OnPageChangeListener): OnScro
     return scrollListener
 }
 
-fun <T> RecyclerView.Adapter<T>.inflate(parent: ViewGroup, @LayoutRes resId: Int): View? where T : RecyclerView.ViewHolder {
+fun <T> RecyclerView.Adapter<T>.inflate(parent: ViewGroup, @LayoutRes resId: Int): View where T : RecyclerView.ViewHolder {
     return LayoutInflater.from(parent.context).inflate(resId, parent, false)
 }
