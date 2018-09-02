@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 6
-        versionName "0.0.12"
+        versionCode 7
+        versionName "0.0.13"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -70,11 +70,11 @@ repositories {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'com.guhungry.android:views'
+    bintrayName = 'com.guhungry.android:custom-views'
 
     publishedGroupId = 'com.guhungry.android'
     libraryName = 'AndroidCustomViews'
-    artifact = 'views'
+    artifact = 'custom-views'
 
     libraryDescription = 'This view is a container that supports diagonal scroll and fling gesture. It is based on AOSP HorizontalScrollView.'
 
