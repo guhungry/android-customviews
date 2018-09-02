@@ -9,7 +9,7 @@ import android.view.View
 class LinearSpacingItemDecoration(@Orientation private val orientation: Int, private val spacing: Int, var includeEdge: Boolean) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         val position = parent.getChildAdapterPosition(view)
-        val count = parent.adapter.itemCount
+        val count = parent.adapter?.itemCount ?: 1
         val currentOffset = position * spacing / count
         val nextOffset = (position + 1) * spacing / count
 

@@ -12,7 +12,7 @@ import com.guhungry.views.recyclerview.listener.OnPageChangeListener
 
 fun RecyclerView.addOnPageChangeListener(listener: OnPageChangeListener): OnScrollListener {
     val scrollListener = object : OnScrollListener() {
-        override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             super.onScrollStateChanged(recyclerView, newState)
 
             if (newState == SCROLL_STATE_IDLE) {
