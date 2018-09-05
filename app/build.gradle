@@ -28,7 +28,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation "com.android.support:recyclerview-v7:$support_version"
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation('com.guhungry.android:views:0.0.11') {
+    implementation('com.guhungry.android:custom-views:0.0.13') {
         exclude group: 'com.android.support'
         exclude group: 'org.jetbrains.kotlin'
     }

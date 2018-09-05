@@ -67,7 +67,6 @@ repositories {
     mavenCentral()
 }
 
-
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'com.guhungry.android:custom-views'

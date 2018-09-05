@@ -7,13 +7,13 @@ Android library with Custom Views and Helpers to make my life simpler written in
 ## Getting started
 ### Install dependencies
 
-Add **Android Custom Views** into project as a Gradle compile dependency: 
+Add **Android Custom Views** into project as a Gradle compile dependency:
 ```
-implementation 'com.guhungry.android:views:0.0.11'
+implementation 'com.guhungry.android:custom-views:0.0.13'
 ```
 or to remove transitive dependencies use:
 ```
-implementation('com.guhungry.android:views:0.0.11') {
+implementation('com.guhungry.android:custom-views:0.0.13') {
     exclude group: 'com.android.support'
     exclude group: 'org.jetbrains.kotlin'
 }
