@@ -18,7 +18,7 @@ implementation('com.guhungry.android:views:0.0.11') {
     exclude group: 'org.jetbrains.kotlin'
 }
 ```
-[ ![Download](https://api.bintray.com/packages/guhungry1/maven/com.guhungry.android%3Aviews/images/download.svg) ](https://bintray.com/guhungry1/maven/com.guhungry.android%3Aviews/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/guhungry1/maven/com.guhungry.android%3Acustom-views/images/download.svg) ](https://bintray.com/guhungry1/maven/com.guhungry.android%3Acustom-views/_latestVersion)
 
 ## Components
 
