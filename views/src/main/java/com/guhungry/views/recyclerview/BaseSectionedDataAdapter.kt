@@ -1,13 +1,15 @@
 package com.guhungry.views.recyclerview
 
+import android.support.annotation.VisibleForTesting
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 
-abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHolder<*>>() {
+abstract class BaseSectionedDataAdapter<T> : RecyclerView.Adapter<BindableViewHolder<*>>() {
     ////////////////////////
     // Generate Section Data
     ////////////////////////
     private var sectionedData = mutableListOf<ListItem>()
+
     protected fun generateSectionData(data: Iterable<T>) {
         data.map(this::toSectionHeader)
                 .distinct()
@@ -19,9 +21,13 @@ abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHol
                                     .map { ListItem(TYPE_ITEM, it as Any) }
                     )
                 }
-        notifyDataSetChanged()
+        privateNotifyDataSetChanged()
     }
+
     abstract fun toSectionHeader(item: T): String
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    protected open fun privateNotifyDataSetChanged() = notifyDataSetChanged()
 
     /////////////////////
     // Create View Holder
@@ -32,6 +38,7 @@ abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHol
             else -> onCreateItemViewHolder(parent)
         }
     }
+
     abstract fun onCreateHeaderViewHolder(parent: ViewGroup): BindableViewHolder<String>
     abstract fun onCreateItemViewHolder(parent: ViewGroup): BindableViewHolder<T>
 
@@ -45,18 +52,22 @@ abstract class BaseSectionedDataAdapter<T>: RecyclerView.Adapter<BindableViewHol
             else -> doBindViewHolder(holder, item.data as T)
         }
     }
+
     private fun <X> doBindViewHolder(holder: BindableViewHolder<*>, data: X) = (holder as? BindableViewHolder<X>)?.bindData(data)
 
     /////////////////
     // Item Functions
     /////////////////
     override fun getItemCount() = sectionedData.size
+
     override fun getItemViewType(position: Int) = sectionedData[position].type
 
     companion object {
-        private const val TYPE_SECTION_HEADER = 0
-        private const val TYPE_ITEM = 1
+        @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+        const val TYPE_SECTION_HEADER = 0
+        @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+        const val TYPE_ITEM = 1
     }
 }
 
-data class ListItem(val type: Int, val data: Any)
+private data class ListItem(val type: Int, val data: Any)
