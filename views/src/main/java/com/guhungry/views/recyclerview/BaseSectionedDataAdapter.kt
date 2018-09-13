@@ -26,8 +26,8 @@ abstract class BaseSectionedDataAdapter<T> : RecyclerView.Adapter<BindableViewHo
 
     abstract fun toSectionHeader(item: T): String
 
-    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    protected open fun privateNotifyDataSetChanged() = notifyDataSetChanged()
+    @VisibleForTesting
+    open fun privateNotifyDataSetChanged() = notifyDataSetChanged()
 
     /////////////////////
     // Create View Holder

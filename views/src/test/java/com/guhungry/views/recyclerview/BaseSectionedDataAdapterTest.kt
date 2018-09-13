@@ -76,8 +76,6 @@ object BaseSectionedDataAdapterTest : Spek({
                 assertThat(header.data, equalTo(4))
             }
         }
-
-
     }
 }) {
     internal class MockAdapterBase : BaseSectionedDataAdapter<Int>() {
@@ -85,9 +83,7 @@ object BaseSectionedDataAdapterTest : Spek({
 
         override fun privateNotifyDataSetChanged() = Unit
 
-        override fun toSectionHeader(item: Int): String {
-            return (item / 4).toString()
-        }
+        override fun toSectionHeader(item: Int) = (item / 4).toString()
 
         override fun onCreateHeaderViewHolder(parent: ViewGroup): BindableViewHolder<String> {
             return Header(mock(View::class.java))
