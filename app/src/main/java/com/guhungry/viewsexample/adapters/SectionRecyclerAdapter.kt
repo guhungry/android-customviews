@@ -13,7 +13,7 @@ class SectionRecyclerAdapter(context: Context) : BaseSectionedDataAdapter<Int>()
     private val inflater = LayoutInflater.from(context)
 
     init {
-        generateSectionData((1..24))
+        generateSectionData(1..24)
     }
 
     override fun toSectionHeader(item: Int) = (((item - 1) / 3) + 1).toString()
