@@ -106,3 +106,5 @@ if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
     bintray.user = properties.getProperty("bintrayUser")
     bintray.key = properties.getProperty("bintrayKey")
 }
+
+apply plugin: "org.sonarqube"
