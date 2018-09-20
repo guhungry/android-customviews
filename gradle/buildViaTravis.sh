@@ -18,6 +18,7 @@ fi
 
 ./gradlew sonarqube \
   -Dsonar.projectKey=guhungry_android-customviews \
+  -Dsonar.projectName=android-customviews \
   -Dsonar.organization=guhungry-github \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=$sonarqubeKey
